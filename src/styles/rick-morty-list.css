@@ -1,0 +1,73 @@
+.container-list-rick-morty {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #2980b9;
+}
+
+.list-horizontal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.character-item {
+    flex: 0 0 calc(20% - 20px);
+    max-width: calc(20% - 20px);
+    box-sizing: border-box;
+}
+
+.character-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+    .character-item {
+        flex: 0 0 calc(25% - 20px);
+        max-width: calc(25% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .character-item {
+        flex: 0 0 calc(33.333% - 20px);
+        max-width: calc(33.333% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .character-item {
+        flex: 0 0 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 320px) {
+    .character-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}

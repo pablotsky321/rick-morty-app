@@ -1,0 +1,68 @@
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-background {
+    flex-grow: 1;
+    background-image: url('https://wallpapers.com/images/hd/rick-and-morty-unamused-rick-agpuysmhk3lhdl4p.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.content-wrapper {
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+/* Estilos para los componentes internos */
+.character-detail-container,
+.loading-barr,
+.details {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.return-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: rgba(52, 152, 219, 0.7);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.return-link:hover {
+    background-color: rgba(41, 128, 185, 0.9);
+}
+
+.character-image img {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.origin-detail,
+.location-detail {
+    background-color: rgba(236, 240, 241, 0.1);
+}
+
+.episodes-list li {
+    background-color: rgba(52, 152, 219, 0.7);
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        padding: 10px;
+    }
+}

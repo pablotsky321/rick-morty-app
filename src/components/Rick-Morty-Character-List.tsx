@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import {fetchCharacterList} from "../services/data.service.ts";
 import {Result} from "../vite-env";
 import RickMortyCharacter from "./Rick-Morty-Character.tsx";
+import '../styles/rick-morty-list.css'
 
 export default function RickMortyCharacterList() {
     const [page, setPage] = useState(1)
@@ -38,13 +39,19 @@ export default function RickMortyCharacterList() {
 
     return (
         <View>
+            <div className='container-list-rick-morty'>
             <div className='button-group'>
                 <button className='button' onClick={()=>sumPage()}>Siguiente</button>
                 <button className='button' onClick={()=>restPage()}>Anterior</button>
             </div>
+            <div className='list-horizontal'>
             {characterList.map((character)=>{
-                return(<RickMortyCharacter data={character} key={character.id}/>)
+                return(
+                    <RickMortyCharacter data={character} key={character.id}/>
+                )
             })}
+            </div>
+            </div>
         </View>
     );
 }

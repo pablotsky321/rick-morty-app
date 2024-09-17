@@ -1,0 +1,147 @@
+.loading-barr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 1.5rem;
+    color: #3498db;
+}
+
+.character-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.return-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.return-link:hover {
+    background-color: #2980b9;
+}
+
+.details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.character-image {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+}
+
+.character-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.character-detail {
+    flex: 2;
+    min-width: 250px;
+}
+
+.character-detail p,
+.origin-detail p,
+.location-detail p {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #2c3e50;
+    word-break: break-word;
+}
+
+.character-detail p::first-line,
+.origin-detail p::first-line,
+.location-detail p::first-line {
+    font-weight: bold;
+    color: #34495e;
+}
+
+.origin-detail,
+.location-detail {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+}
+
+.origin-detail h3,
+.location-detail h3 {
+    margin-top: 0;
+    color: #2980b9;
+    font-size: 1.2rem;
+}
+
+.episodes-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+}
+
+.episodes-list li {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    word-break: break-word;
+}
+
+@media (max-width: 768px) {
+    .details {
+        flex-direction: column;
+    }
+
+    .character-image,
+    .character-detail {
+        min-width: 100%;
+    }
+
+    .character-image {
+        max-width: none;
+    }
+
+    .episodes-list {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .character-detail-container {
+        padding: 10px;
+    }
+
+    .details {
+        padding: 15px;
+    }
+
+    .episodes-list {
+        grid-template-columns: 1fr;
+    }
+
+    .character-detail p,
+    .origin-detail p,
+    .location-detail p,
+    .episodes-list li {
+        font-size: 0.9rem;
+    }
+}

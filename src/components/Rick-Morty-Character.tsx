@@ -7,17 +7,19 @@ export default function RickMortyCharacter({data}:{data:Result}) {
 
     return(
         <View>
-            <Link to={`/${data.id}`} className='character-container'>
-            <div className='character-image'>
-                <img src={data.image} alt='Character'/>
+            <div className="character-card">
+                <Link to={`/${data.id}`} className="character-link">
+                    <div className="character-image">
+                        <img src={data.image} alt={`${data.name} character`}/>
+                    </div>
+                    <div className="character-info">
+                        <h2 className="character-name">{data.name}</h2>
+                        <p className="character-detail"><span>Species:</span> {data.species}</p>
+                        <p className="character-detail"><span>Gender:</span> {data.gender}</p>
+                        <p className="character-detail"><span>Status:</span> {data.status}</p>
+                    </div>
+                </Link>
             </div>
-            <div className='properties'>
-                <p>name: {data.name}</p>
-                <p>species: {data.species}</p>
-                <p>gender: {data.gender}</p>
-                <p>status: {data.status}</p>
-            </div>
-            </Link>
         </View>
     )
 }
