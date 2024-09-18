@@ -1,29 +1,82 @@
-.rick-morty-main-container {
-    margin-top: 20px;
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
 }
 
-.rick-morty-header{
-    text-align: center;
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
 }
 
-.rick-morty-title {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+.title {
+    font-size: 4rem;
+    color: #00b5cc;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.5);
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 2px;
 }
 
-.rick-morty-link-icon p {
-    margin-bottom: 0.5rem;
+.link-icon {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.link-icon p {
+    color: #ffffff;
+    margin: 0;
     font-size: 0.9rem;
-    color: #718096; /* gris */
 }
 
 .rick-morty-link {
-    color: #4299e1; /* azul */
+    color: #00ffff;
     text-decoration: none;
-    margin-left: 0.5rem;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: rgba(0, 255, 255, 0.1);
 }
 
 .rick-morty-link:hover {
-    text-decoration: underline;
+    color: #ffffff;
+    background-color: rgba(0, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        padding: 15px;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+
+    .link-icon {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-container {
+        padding: 10px;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .rick-morty-link {
+        font-size: 0.8rem;
+    }
 }
