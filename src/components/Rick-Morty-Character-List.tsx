@@ -48,8 +48,8 @@ export default function RickMortyCharacterList() {
             <div className='container-list-rick-morty'>
                 <input className='search-bar' type='text' value={name} onChange={handleInputChange} placeholder='Search by name' />
             <div className='button-group'>
-                <button className='button' onClick={()=>sumPage()}>Siguiente</button>
-                <button className='button' onClick={()=>restPage()}>Anterior</button>
+                <button className='button' onClick={()=>sumPage()}>Next</button>
+                <button className='button' onClick={()=>restPage()}>Previous</button>
             </div>
             <div className='list-horizontal'>
             {characterList.map((character)=>{
