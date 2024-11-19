@@ -1,5 +1,5 @@
 import View from "./View.tsx";
-import {useEffect, useState} from "react";
+import {ChangeEvent, useEffect, useState} from "react";
 import {fetchCharacterList} from "../services/data.service.ts";
 import {Result} from "../vite-env";
 import RickMortyCharacter from "./Rick-Morty-Character.tsx";
@@ -9,9 +9,10 @@ export default function RickMortyCharacterList() {
     const [page, setPage] = useState(1)
     const [characterList, setCharacterList] = useState([] as Result[])
     const [maxPage, setMaxPage] = useState(1)
+    const [name, setName] = useState('')
 
     useEffect(()=>{
-        fetchCharacterList(page)
+        fetchCharacterList(page, name)
             .then((data)=>{
                 setCharacterList(data.results)
                 setMaxPage(data.info.pages)
@@ -19,7 +20,7 @@ export default function RickMortyCharacterList() {
             .catch((err)=>{
                 console.error(err)
             })
-    },[page])
+    },[page, name])
 
     const sumPage = () =>{
         if(page<maxPage){
@@ -37,9 +38,15 @@ export default function RickMortyCharacterList() {
         }
     }
 
+        const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+            const newText = event.target.value;
+            setName(newText);
+        };
+
     return (
         <View>
             <div className='container-list-rick-morty'>
+                <input className='search-bar' type='text' value={name} onChange={handleInputChange} placeholder='Search by name' />
             <div className='button-group'>
                 <button className='button' onClick={()=>sumPage()}>Siguiente</button>
                 <button className='button' onClick={()=>restPage()}>Anterior</button>
