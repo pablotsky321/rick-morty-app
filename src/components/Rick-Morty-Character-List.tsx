@@ -43,21 +43,33 @@ export default function RickMortyCharacterList() {
             setName(newText);
         };
 
+    if(characterList == null){
+        return (
+            <div className='not-found-container'>
+                <input className='search-bar' type='text' value={name} onChange={handleInputChange}
+                       placeholder='Search by name'/>
+                <h1>Characters not found</h1>
+            </div>
+        )
+    }
+
     return (
         <View>
             <div className='container-list-rick-morty'>
-                <input className='search-bar' type='text' value={name} onChange={handleInputChange} placeholder='Search by name' />
-            <div className='button-group'>
-                <button className='button' onClick={()=>sumPage()}>Next</button>
-                <button className='button' onClick={()=>restPage()}>Previous</button>
-            </div>
-            <div className='list-horizontal'>
-            {characterList.map((character)=>{
-                return(
-                    <RickMortyCharacter data={character} key={character.id}/>
-                )
-            })}
-            </div>
+                <input className='search-bar' type='text' value={name} onChange={handleInputChange}
+                       placeholder='Search by name'/>
+                <div className='button-group'>
+                    <button className='button' onClick={() => sumPage()}>Next</button>
+                    <button className='button' onClick={() => restPage()}>Previous</button>
+                </div>
+                <p className='page-indicator'>page {page} of {maxPage}</p>
+                <div className='list-horizontal'>
+                    {characterList.map((character) => {
+                        return (
+                            <RickMortyCharacter data={character} key={character.id}/>
+                        )
+                    })}
+                </div>
             </div>
         </View>
     );

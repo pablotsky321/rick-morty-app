@@ -69,6 +69,184 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+.not-found-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 2px solid rgba(255, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+}
+
+.not-found-container h1 {
+    font-size: 24px;
+    color: #ff6b6b;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.not-found-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+.not-found-container .search-bar {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px 20px;
+    margin-bottom: 30px;
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.not-found-container .search-bar::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.not-found-container .search-bar:focus {
+    outline: none;
+    border-color: #00ffff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.not-found-container h1 {
+    font-size: 28px;
+    color: #00ffff;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    margin: 0;
+}
+
+.page-indicator {
+    text-align: center;
+    font-size: 1rem;
+    color: #00ffff;
+    margin: 15px 0;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.page-indicator::before,
+.page-indicator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 1px;
+    background-color: rgba(0, 255, 255, 0.5);
+}
+
+.page-indicator::before {
+    right: 100%;
+    margin-right: 10px;
+}
+
+.page-indicator::after {
+    left: 100%;
+    margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+    .page-indicator {
+        font-size: 0.9rem;
+        padding: 4px 8px;
+    }
+
+    .page-indicator::before,
+    .page-indicator::after {
+        width: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-indicator {
+        font-size: 0.8rem;
+        padding: 3px 6px;
+    }
+
+    .page-indicator::before,
+    .page-indicator::after {
+        width: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .not-found-container {
+        padding: 20px;
+        min-height: 250px;
+    }
+
+    .not-found-container .search-bar {
+        max-width: 300px;
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+
+    .not-found-container h1 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .not-found-container {
+        padding: 15px;
+        min-height: 200px;
+    }
+
+    .not-found-container .search-bar {
+        max-width: 100%;
+    }
+
+    .not-found-container h1 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .not-found-container {
+        min-height: 150px;
+        padding: 15px;
+    }
+
+    .not-found-container h1 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .not-found-container {
+        min-height: 100px;
+        padding: 10px;
+    }
+
+    .not-found-container h1 {
+        font-size: 18px;
+    }
+}
+
 @media (max-width: 768px) {
     .search-bar {
         max-width: 300px;
