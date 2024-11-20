@@ -23,7 +23,7 @@ function CharacterDetail() {
     if(!character.name){
         return (
             <div className='loading-barr'>
-                <p>Cargando...</p>
+                <p>Loading...</p>
             </div>
         );
     }
@@ -31,7 +31,7 @@ function CharacterDetail() {
     return (
        <View>
            <div className='character-detail-container'>
-               <Link to='/' className='return-link'>Volver</Link>
+               <Link to='/' className='return-link'>Go back</Link>
                <div className='details'>
                    <div className='character-image'>
                        <img src={character.image} alt="character-image"/>
